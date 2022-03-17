@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('Renders IMDB API', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/IMDB API/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('Renders IMDB API', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Dark Mode:/i);
   expect(linkElement).toBeInTheDocument();
 });
