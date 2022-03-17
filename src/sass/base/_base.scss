@@ -1,0 +1,10 @@
+@use './../abstracts/' as *;
+@use './color-themes' as *;
+
+.app {
+  width: 70%;
+
+  @include themed() {
+    background-color: t($bg);
+  }
+}

@@ -1,0 +1,25 @@
+@use './../base/color-themes' as *;
+
+.search-bar {
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  padding: 50px;
+}
+
+.search-bar-btn {
+  @include themed() {
+    background-color: t($bg);
+    color: t($text);
+  }
+}
+
+.search-bar-btn {
+  display: inline-block;
+  width: 20%;
+}
+
+.search-bar-input {
+  width: 70%;
+  display: inline-block;
+}
