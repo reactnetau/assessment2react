@@ -2,6 +2,8 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+//Using inline styles
+//Sets up each search result card
 const MovieCard = (props) => {
   return (
     <Card

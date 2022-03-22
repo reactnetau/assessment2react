@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+//Basic search bar setup.
 const SearchBar = ({ onSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('');
 

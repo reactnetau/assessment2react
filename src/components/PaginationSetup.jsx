@@ -1,5 +1,7 @@
 import React from 'react';
 import { Pagination } from 'react-bootstrap';
+
+//Sets up Pagination
 const PaginationSetup = ({ movies, currentIndex, onChange }) => {
   let pages = movies && movies.length / 20 + 1;
   let active = currentIndex + 1;

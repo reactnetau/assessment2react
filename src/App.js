@@ -7,15 +7,15 @@ function App() {
   const BASE_URL = 'https://imdb-api.com/en/API/SearchAll/';
 
   const [searchTerm, setSearchTerm] = useState('');
-
-  const [url, setURL] = useState('');
   const [results, setResults] = useState([]);
   const [theme, setTheme] = useState('default');
 
+  //Search Data every time 'searchTerm' is changed
   useEffect(() => {
     search();
   }, [searchTerm]);
 
+  //Handle change theme from default to dark
   const handleChangeTheme = () => {
     console.log('handle change theme');
     if (theme === 'default') {
@@ -25,6 +25,7 @@ function App() {
     }
   };
 
+  //Handle Search Query
   const search = () => {
     axios.get(`${BASE_URL}${API_KEY}/${searchTerm}`).then((data) => {
       console.log(data.data);
@@ -32,6 +33,7 @@ function App() {
     });
   };
 
+  //Handle Top 250 Movies Query
   const handleOnTopMovies = () => {
     axios
       .get(`https://imdb-api.com/en/API/Top250Movies/${API_KEY}`)
@@ -40,6 +42,8 @@ function App() {
         setResults(data.data.items);
       });
   };
+
+  //Handle Top 250 TV Query
   const handleOnTopTV = () => {
     axios
       .get('https://imdb-api.com/en/API/Top250TVs/k_aq58hqvt')
@@ -49,6 +53,7 @@ function App() {
       });
   };
 
+  //Set Search Term
   const handleSearchTerm = (term) => {
     setSearchTerm(term);
   };

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
+//Sets the Header with Props
 const Header = ({ onSubmitName, onTopMovies, onTopTV, onToggleDarkMode }) => {
   const [name, setName] = useState('');
   const [nameSet, setNameSet] = useState(false);
   const [error, setError] = useState('');
 
+  //Validates search term to be characters and numbers
   const validateSearchTerm = () => {
     const match = name.match('[a-zA-Z0-9]+$');
     console.log('search term valid', match);

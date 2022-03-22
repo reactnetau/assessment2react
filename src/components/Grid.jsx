@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
-import { Row, Col } from 'react-bootstrap';
 
+//Displays the grid of results
 const Grid = ({ movies }) => {
   const [grid, setGrid] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  //Updates the display every time 'movies' is changed'
   useEffect(() => {
-    //movies && movies.length === 0 ? setLoading(true) : setLoading(false);
     setGrid(movies);
   }, [movies]);
   console.log('movies', grid);
