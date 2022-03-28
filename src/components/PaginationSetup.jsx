@@ -21,6 +21,7 @@ const PaginationSetup = ({ movies, currentIndex, onChange }) => {
     );
   }
 
+  //Display Pagination
   const paginationBasic = (
     <div className="pagination">
       <Pagination size="lg">{items}</Pagination>

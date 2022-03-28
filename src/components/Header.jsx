@@ -13,10 +13,12 @@ const Header = ({ onSubmitName, onTopMovies, onTopTV, onToggleDarkMode }) => {
     return match;
   };
 
+  //Set state of name
   function setNameValue(e) {
     setName(e.target.value);
   }
 
+  //Submit and validate name
   function submitName() {
     if (validateSearchTerm(name)) {
       onSubmitName(name);
@@ -27,6 +29,7 @@ const Header = ({ onSubmitName, onTopMovies, onTopTV, onToggleDarkMode }) => {
     }
   }
 
+  //Render view
   function renderView() {
     if (nameSet == false) {
       return (

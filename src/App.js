@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './containers/Home';
+import PageNotFound from './containers/PageNotFound';
 
 function App() {
   const API_KEY = 'k_aq58hqvt';
@@ -63,15 +65,25 @@ function App() {
   };
   return (
     <div className="App">
-      <Home
-        movies={results}
-        onTopMovies={handleOnTopMovies}
-        onTopTV={handleOnTopTV}
-        onSearchTerm={handleSearchTerm}
-        onChangeTerm={handleTermChange}
-        theme={theme}
-        onToggleDarkMode={handleChangeTheme}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                movies={results}
+                onTopMovies={handleOnTopMovies}
+                onTopTV={handleOnTopTV}
+                onSearchTerm={handleSearchTerm}
+                onChangeTerm={handleTermChange}
+                theme={theme}
+                onToggleDarkMode={handleChangeTheme}
+              />
+            }
+          ></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

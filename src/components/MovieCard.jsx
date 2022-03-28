@@ -18,8 +18,11 @@ const MovieCard = (props) => {
       <Card.Img variant="top" src={props.movie.image} />
       <Card.Body>
         <Card.Title>{props.movie.title}</Card.Title>
-        <Card.Text>{props.movie.description}</Card.Text>
-        <Button variant="primary">Details</Button>
+        <Card.Text>Rating: {props.movie.imDbRating}</Card.Text>
+        <Card.Text>Year: {props.movie.year}</Card.Text>
+
+        <Card.Text>Rank #{props.movie.rank}</Card.Text>
+        <Card.Text>Crew: {props.movie.crew}</Card.Text>
       </Card.Body>
     </Card>
   );

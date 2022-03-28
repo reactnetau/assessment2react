@@ -12,11 +12,13 @@ const Home = ({
   theme,
   onToggleDarkMode,
 }) => {
+  //Setup State for pagination system
   const [pages, setPages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [name, setName] = useState('');
 
+  //Setup pagination system
   function setup() {
     let pages = [];
     var i,
@@ -37,14 +39,17 @@ const Home = ({
     setup();
   }, [currentIndex, movies]);
 
+  //Change index of pagination system
   const handleChange = (index) => {
     setCurrentIndex(index);
   };
 
+  //Set state for customised feature
   const handleSubmitName = (name) => {
     setName(name);
   };
 
+  //Render Main Display
   return (
     <div
       className={
